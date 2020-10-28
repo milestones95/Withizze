@@ -10,10 +10,6 @@ class Main extends React.Component {
     }
 }
 
-componentWillMount() {
-  window.test();
-}
-
 const app = document.createElement('div');
 app.id = "my-extension-root";
 
