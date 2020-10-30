@@ -15,28 +15,49 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { borders } from '@material-ui/system';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    background: 'rgba(255, 255, 255, 0.75)',
+    maxWidth: 200,
+    borderRadius: '12px',
+    position: 'absolute',
+    width: '200px',
+    height: '69px',
+    left: '0px',
+    color: 'black',
+    top: '0px',
+    fontSize: 7,
+    alignContent: 'center',
+
+    expand: {
+      transform: 'rotate(0deg)',
+      marginLeft: 'auto',
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+      }),
+    },
+    expandOpen: {
+      transform: 'rotate(180deg)',
+    },
+    buttonIcon:{
+      width: '10px',
+      height: '10px',
+    }
+
   },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
+  // media: {
+  //   height: 0,
+  //   paddingTop: '56.25%', // 16:9
+  // },
+
+
+
+  // avatar: {
+  //   backgroundColor: red[500],
+  // },
 }));
 
 export default function RecipeReviewCard() {
@@ -54,12 +75,13 @@ export default function RecipeReviewCard() {
       />
       <CardActions disableSpacing>
         <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
+          className={clsx(classes.root.expand, {
+            [classes.root.expandOpen]: expanded,
           })}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
+          iconStyle={classes.root.buttonIcon}
         >
           <ExpandMoreIcon />
         </IconButton>
