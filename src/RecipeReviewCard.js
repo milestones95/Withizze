@@ -1,3 +1,4 @@
+/*global chrome*/
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -16,7 +17,11 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { borders } from '@material-ui/system';
-
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { green } from '@material-ui/core/colors';
+import Icon from '@material-ui/core/Icon';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,12 +30,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '12px',
     position: 'absolute',
     width: '200px',
-    height: '69px',
     left: '0px',
-    color: 'black',
-    top: '0px',
-    fontSize: 7,
     alignContent: 'center',
+  },
 
     expand: {
       transform: 'rotate(0deg)',
@@ -45,19 +47,16 @@ const useStyles = makeStyles((theme) => ({
     buttonIcon:{
       width: '10px',
       height: '10px',
-    }
+    },
+}));
 
+const insideBox = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
   },
-  // media: {
-  //   height: 0,
-  //   paddingTop: '56.25%', // 16:9
-  // },
-
-
-
-  // avatar: {
-  //   backgroundColor: red[500],
-  // },
 }));
 
 const theme = createMuiTheme({
@@ -68,6 +67,7 @@ const theme = createMuiTheme({
 });
 export default function RecipeReviewCard() {
   const classes = useStyles();
+  const insideBoxClass = insideBox();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -76,32 +76,46 @@ export default function RecipeReviewCard() {
 
   return (
     <Card className={classes.root}>
-  <ThemeProvider theme={theme}>
-      <CardHeader
-        title="Withizze"
-      />
-      <CardActions disableSpacing>
-        <IconButton
-          className={clsx(classes.root.expand, {
-            [classes.root.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-          iconStyle={classes.root.buttonIcon}
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>
-            This item fits you perfectly.
-          </Typography>
-        </CardContent>
-      </Collapse>
+    <ThemeProvider theme={theme}>
+        <CardHeader
+          title="Withizze"
+        />
+        <CardActions disableSpacing>
+          <IconButton
+            className={clsx(classes.root.expand, {
+              [classes.root.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+            iconStyle={classes.root.buttonIcon}
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+          <Grid container spacing={2} align='center'>
+            <Grid item xs={6} align='center'>
+              <Avatar align='center' alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+              <Typography align='center'>Strechy</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" />
+              <Typography align='center'>True To Size</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+              <Typography align='center'>People Similar To You Bought These Jeans</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+              <Typography align='center'>Soft</Typography>
+            </Grid>
+          </Grid>
+          </CardContent>
+        </Collapse>
       </ThemeProvider>
-
     </Card>
   );
 }
