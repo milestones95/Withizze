@@ -68,7 +68,9 @@ const useStyles = makeStyles((theme) => ({
     height: 18,
     width: 1,
   },
+
   }));
+
 
 const insideBox = makeStyles((theme) => ({
   root: {
@@ -85,6 +87,40 @@ const theme = createMuiTheme({
     fontFamily: 'Inter',
   }
 });
+
+ function CreateDescriptors() {
+ const classes = useStyles();
+
+ const phrases = ["Stretchy","True To Size","People Similar To You Bought These Jeans","Soft"]
+ const min = 0
+ const max = 3
+ const rand = Math.round(min + Math.random() * (max - min))
+ console.log("rand: " + rand)
+ const descriptor = phrases[rand]
+ const j = "juicy"
+
+
+ return(
+   <Grid container spacing={2} align='center'>
+     <Grid item xs={6} align='center'>
+       <Avatar align='center' alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+       <Typography align='center'>{descriptor}</Typography>
+     </Grid>
+     <Grid item xs={6}>
+       <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" />
+       <Typography align='center'>True to Size</Typography>
+     </Grid>
+     <Grid item xs={6}>
+       <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+       <Typography align='center'>People Similar To You Bought These Jeans</Typography>
+     </Grid>
+     <Grid item xs={6}>
+       <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+       <Typography align='center'>Soft</Typography>
+     </Grid>
+   </Grid>
+ )
+}
 export default function RecipeReviewCard() {
   const classes = useStyles();
   const insideBoxClass = insideBox();
@@ -111,12 +147,12 @@ export default function RecipeReviewCard() {
         <Typography>4.9</Typography>
       </Grid>
       <Grid item xs>
-      <AvatarGroup max={4}>
-        <Avatar alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"  className={classes.small}/>
-        <Avatar alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-        <Avatar alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-        <Avatar alt="Agnes Walker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-      </AvatarGroup>
+        <AvatarGroup max={4}>
+          <Avatar alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"  className={classes.small}/>
+          <Avatar alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+          <Avatar alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+          <Avatar alt="Agnes Walker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+        </AvatarGroup>
       </Grid>
         <CardActions disableSpacing>
         <Grid item xs>
@@ -136,24 +172,7 @@ export default function RecipeReviewCard() {
         </Grid>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-          <Grid container spacing={2} align='center'>
-            <Grid item xs={6} align='center'>
-              <Avatar align='center' alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-              <Typography align='center'>Strechy</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" />
-              <Typography align='center'>True To Size</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-              <Typography align='center'>People Similar To You Bought These Jeans</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-              <Typography align='center'>Soft</Typography>
-            </Grid>
-          </Grid>
+            <CreateDescriptors></CreateDescriptors>
           </CardContent>
         </Collapse>
       </ThemeProvider>
