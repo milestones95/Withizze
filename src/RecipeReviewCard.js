@@ -23,12 +23,13 @@ import Icon from '@material-ui/core/Icon';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
-
+import StarIcon from '@material-ui/icons/Star';
+import Divider from '@material-ui/core/Divider'; 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     background: 'rgba(255, 255, 255, 0.75)',
-    maxWidth: 200,
+    maxWidth: 400,
     borderRadius: '12px',
     position: 'absolute',
     width: '200px',
@@ -57,7 +58,16 @@ const useStyles = makeStyles((theme) => ({
     },
     cardAction:{
       padding: 0,
-    }
+    },
+    small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
+  icon: {
+    verticalAlign: 'bottom',
+    height: 18,
+    width: 1,
+  },
   }));
 
 const insideBox = makeStyles((theme) => ({
@@ -87,21 +97,29 @@ export default function RecipeReviewCard() {
   return (
     <Card className={classes.root}>
     <ThemeProvider theme={theme}>
-    <Grid container spacing={2} align='center'>
-      <Grid item xs={3}>
-          <CardHeader
-            title="Withizze"
-          />
+    <Grid container direction="row" justify="center" alignItems="center">
+      <Grid item xs>
+      <Typography>Withizze</Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs>
+        <Divider className={classes.icon} style={{ color: "black" }}/>
+      </Grid>
+      <Grid item xs>
+        <StarIcon style={{ color: "gold" }} />
+      </Grid>
+      <Grid item xs>
+        <Typography>4.9</Typography>
+      </Grid>
+      <Grid item xs>
       <AvatarGroup max={4}>
-        <Avatar alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"  style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}/>
-        <Avatar alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}/>
-        <Avatar alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png" style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}/>
-        <Avatar alt="Agnes Walker" src="https://i.ibb.co/tYScJ38/Frame.png" style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}/>
+        <Avatar alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"  className={classes.small}/>
+        <Avatar alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+        <Avatar alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+        <Avatar alt="Agnes Walker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
       </AvatarGroup>
       </Grid>
         <CardActions disableSpacing>
+        <Grid item xs>
           <IconButton
             className={clsx(classes.root.expand, {
               [classes.root.expandOpen]: expanded,
@@ -111,10 +129,9 @@ export default function RecipeReviewCard() {
             aria-label="show more"
             iconStyle={classes.root.buttonIcon}
           >
-          <Grid item xs={3}>
             <ExpandMoreIcon />
-          </Grid>
           </IconButton>
+          </Grid>
         </CardActions>
         </Grid>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
