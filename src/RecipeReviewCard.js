@@ -1,6 +1,7 @@
 /*global chrome*/
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -8,7 +9,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
@@ -22,6 +22,8 @@ import { green } from '@material-ui/core/colors';
 import Icon from '@material-ui/core/Icon';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,10 +47,18 @@ const useStyles = makeStyles((theme) => ({
       transform: 'rotate(180deg)',
     },
     buttonIcon:{
-      width: '10px',
-      height: '10px',
+      padding: 0,
     },
-}));
+    avatar:{
+      marginLeft: '-10px',
+    },
+    cardheader:{
+      margin: 0,
+    },
+    cardAction:{
+      padding: 0,
+    }
+  }));
 
 const insideBox = makeStyles((theme) => ({
   root: {
@@ -56,12 +66,12 @@ const insideBox = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
     },
-  },
-}));
+  }}));
+
 
 const theme = createMuiTheme({
   typography: {
-    fontSize: 8,
+    fontSize: 5,
     fontFamily: 'Inter',
   }
 });
@@ -77,9 +87,20 @@ export default function RecipeReviewCard() {
   return (
     <Card className={classes.root}>
     <ThemeProvider theme={theme}>
-        <CardHeader
-          title="Withizze"
-        />
+    <Grid container spacing={2} align='center'>
+      <Grid item xs={3}>
+          <CardHeader
+            title="Withizze"
+          />
+      </Grid>
+      <Grid item xs={3}>
+      <AvatarGroup max={4}>
+        <Avatar alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"  style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}/>
+        <Avatar alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}/>
+        <Avatar alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png" style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}/>
+        <Avatar alt="Agnes Walker" src="https://i.ibb.co/tYScJ38/Frame.png" style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}/>
+      </AvatarGroup>
+      </Grid>
         <CardActions disableSpacing>
           <IconButton
             className={clsx(classes.root.expand, {
@@ -90,9 +111,12 @@ export default function RecipeReviewCard() {
             aria-label="show more"
             iconStyle={classes.root.buttonIcon}
           >
+          <Grid item xs={3}>
             <ExpandMoreIcon />
+          </Grid>
           </IconButton>
         </CardActions>
+        </Grid>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
           <Grid container spacing={2} align='center'>
