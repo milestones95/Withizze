@@ -30,12 +30,22 @@ import Grid from '@material-ui/core/Grid';
     }while(count<4)
 
     const phrases = ["Stretchy","True To Size","People Similar To You Bought These Jeans","Soft"]
+    const phrasesToImg = [
+      "https://i.ibb.co/5G8r8wv/Group-215-7.png",
+      "https://i.ibb.co/7YdXKbg/Group-215.png",
+      "https://i.ibb.co/McQZ75H/Group-215-9.png",
+      "https://i.ibb.co/1nZRZPT/Group-215-8.png",
+
+    ]
     this.setState({
      x: phrases[randos[0]],
+     xImg: phrasesToImg[randos[0]],
      y: phrases[randos[1]],
+     yImg: phrasesToImg[randos[1]],
      z: phrases[randos[2]],
+     zImg: phrasesToImg[randos[2]],
      w: phrases[randos[3]],
-
+     wImg: phrasesToImg[randos[3]],
    });
   }
 
@@ -47,19 +57,19 @@ import Grid from '@material-ui/core/Grid';
       return (
         <Grid container spacing={2} align='center'>
           <Grid item xs={6} align='center'>
-            <Avatar align='center' alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+            <Avatar align='center' alt="Remy Sharp" src={this.state.xImg}/>
             <Typography align='center'>{this.state.x}</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" />
+            <Avatar align='center' alt="Travis Howard" src={this.state.yImg} />
             <Typography align='center'>{this.state.y}</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+            <Avatar align='center' alt="Cindy Baker" src={this.state.zImg}/>
             <Typography align='center'>{this.state.z}</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+            <Avatar align='center' alt="Cindy Baker" src={this.state.wImg}/>
             <Typography align='center'>{this.state.w}</Typography>
           </Grid>
         </Grid>

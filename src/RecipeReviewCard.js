@@ -26,18 +26,22 @@ import Randomness from './Randomizer';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import StarIcon from '@material-ui/icons/Star';
 import Divider from '@material-ui/core/Divider'; 
-
+import blueGrey from '@material-ui/core/colors/blueGrey'; 
 const useStyles = makeStyles((theme) => ({
   root: {
     background: 'rgba(255, 255, 255, 0.75)',
     maxWidth: 400,
-    borderRadius: '12px',
+    borderRadius: '0px 0px 12px 0px',
     position: 'absolute',
-    width: '200px',
+    width: '210px',
     left: '0px',
     alignContent: 'center',
   },
-
+  hover: {
+    '&:hover': {
+         backgroundColor: "red"
+       }
+  },
     expand: {
       transform: 'rotate(0deg)',
       marginLeft: 'auto',
@@ -68,6 +72,15 @@ const useStyles = makeStyles((theme) => ({
     verticalAlign: 'bottom',
     height: 18,
     width: 1,
+    backgroundColor: 'black',
+  },
+  dividerTwo: {
+    width: 50,
+    padding: 0,
+    backgroundColor: 'gray',
+  },
+  column: {
+   flexBasis: '33%',
   },
 
   }));
@@ -84,7 +97,7 @@ const insideBox = makeStyles((theme) => ({
 
 const theme = createMuiTheme({
   typography: {
-    fontSize: 5,
+    fontSize: 7.5,
     fontFamily: 'Inter',
   }
 });
@@ -101,34 +114,45 @@ export default function RecipeReviewCard() {
   const classes = useStyles();
   const insideBoxClass = insideBox();
   const [expanded, setExpanded] = React.useState(false);
-
+  const fontWeight = 600
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+
 
   return (
     <Card className={classes.root}>
     <ThemeProvider theme={theme}>
     <Grid container direction="row" justify="center" alignItems="center">
       <Grid item xs>
-      <Typography>Withizze</Typography>
+        <div className={classes.column} />
       </Grid>
       <Grid item xs>
-        <Divider className={classes.icon} style={{ color: "black" }}/>
+      <Typography style={{ "fontWeight": fontWeight}}>Withizze</Typography>
       </Grid>
       <Grid item xs>
-        <StarIcon style={{ color: "gold" }} />
+        <div className={classes.column} />
       </Grid>
       <Grid item xs>
-        <Typography>4.9</Typography>
+        <Divider className={classes.icon}/>
       </Grid>
       <Grid item xs>
-        <AvatarGroup max={4}>
-          <Avatar alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"  className={classes.small}/>
-          <Avatar alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-          <Avatar alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-          <Avatar alt="Agnes Walker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-        </AvatarGroup>
+        <StarIcon style={{ color: "#FFA336"}} />
+      </Grid>
+      <Grid item xs>
+        <Typography style={{ "fontWeight": fontWeight}} >4.9</Typography>
+      </Grid>
+      <Grid item xs>
+        <div className={classes.column} />
+      </Grid>
+      <Grid item xs>
+      <AvatarGroup max={4}>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/ZN1S7hP/Group-215-6.png"  className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}}  src="https://i.ibb.co/Y8JGfrp/Group-215-5.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/4MNjhM4/Group-215-1.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/bz4t0sb/Group-215-2.png" className={classes.small}/>
+      </AvatarGroup>
       </Grid>
         <CardActions disableSpacing>
         <Grid item xs>
@@ -140,6 +164,7 @@ export default function RecipeReviewCard() {
             aria-expanded={expanded}
             aria-label="show more"
             iconStyle={classes.root.buttonIcon}
+            style={{ background: '#F1F3FB'}}
           >
             <ExpandMoreIcon />
           </IconButton>
