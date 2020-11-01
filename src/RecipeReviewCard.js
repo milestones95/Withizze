@@ -93,24 +93,7 @@ const theme = createMuiTheme({
  const classes = useStyles();
 
  return(
-   <Grid container spacing={2} align='center'>
-     <Grid item xs={6} align='center'>
-       <Avatar align='center' alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-       <Randomness></Randomness>
-     </Grid>
-     <Grid item xs={6}>
-       <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" />
-       <Randomness></Randomness>
-     </Grid>
-     <Grid item xs={6}>
-       <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-       <Randomness></Randomness>
-     </Grid>
-     <Grid item xs={6}>
-       <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-       <Randomness></Randomness>
-     </Grid>
-   </Grid>
+   <Randomness></Randomness>
  )
 }
 
