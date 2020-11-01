@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 400,
     borderRadius: '12px',
     position: 'absolute',
-    width: '200px',
+    width: '220px',
     left: '0px',
     alignContent: 'center',
   },
@@ -94,7 +94,7 @@ const insideBox = makeStyles((theme) => ({
 
 const theme = createMuiTheme({
   typography: {
-    fontSize: 5,
+    fontSize: 8,
     fontFamily: 'Inter',
   }
 });
@@ -115,7 +115,7 @@ export default function RecipeReviewCard() {
         <div className={classes.column} />
       </Grid>
       <Grid item xs>
-      <Typography>Withizze</Typography>
+      <Typography style={{ "fontWeight": 650}}>Withizze</Typography>
       </Grid>
       <Grid item xs>
         <div className={classes.column} />
@@ -127,7 +127,7 @@ export default function RecipeReviewCard() {
         <StarIcon style={{ color: "gold"}} />
       </Grid>
       <Grid item xs>
-        <Typography>4.9</Typography>
+        <Typography style={{ "fontWeight": 650}} >4.9</Typography>
       </Grid>
       <Grid item xs>
         <div className={classes.column} />
@@ -150,6 +150,7 @@ export default function RecipeReviewCard() {
             aria-expanded={expanded}
             aria-label="show more"
             iconStyle={classes.root.buttonIcon}
+            style={{ background: '#F1F3FB'}}
           >
             <ExpandMoreIcon />
           </IconButton>
