@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import RecipeReviewCard from './RecipeReviewCard';
+//import WithizzeReviewCard from './WithizzeReviewCard';
+
 import registerServiceWorker from './registerServiceWorker';
 
 window.onscroll = function () {

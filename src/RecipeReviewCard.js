@@ -23,6 +23,7 @@ import Icon from '@material-ui/core/Icon';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Randomness from './Randomizer';
+import Rating from './Rating'
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import StarIcon from '@material-ui/icons/Star';
 import Divider from '@material-ui/core/Divider'; 
@@ -102,6 +103,7 @@ const theme = createMuiTheme({
   }
 });
 
+//Renders the content inside the Card
  function CreateDescriptors() {
  const classes = useStyles();
 
@@ -110,7 +112,14 @@ const theme = createMuiTheme({
  )
 }
 
+  function generateRating(){
+  var rand = 3 + Math.random() * (5 - 3)
+  console.log("rating: " + rand)
+  return rand.toFixed(1)
+}
+
 export default function RecipeReviewCard() {
+  const rating = generateRating()
   const classes = useStyles();
   const insideBoxClass = insideBox();
   const [expanded, setExpanded] = React.useState(false);
@@ -118,8 +127,6 @@ export default function RecipeReviewCard() {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
-
 
   return (
     <Card className={classes.root}>
@@ -141,7 +148,7 @@ export default function RecipeReviewCard() {
         <StarIcon style={{ color: "#FFA336"}} />
       </Grid>
       <Grid item xs>
-        <Typography style={{ "fontWeight": fontWeight}} >4.9</Typography>
+        <Rating></Rating>
       </Grid>
       <Grid item xs>
         <div className={classes.column} />
