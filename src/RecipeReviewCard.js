@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 400,
     borderRadius: '12px',
     position: 'absolute',
-    width: '220px',
+    width: '210px',
     left: '0px',
     alignContent: 'center',
   },
@@ -94,7 +94,7 @@ const insideBox = makeStyles((theme) => ({
 
 const theme = createMuiTheme({
   typography: {
-    fontSize: 8,
+    fontSize: 6,
     fontFamily: 'Inter',
   }
 });
@@ -134,10 +134,10 @@ export default function RecipeReviewCard() {
       </Grid>
       <Grid item xs>
       <AvatarGroup max={4}>
-        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/tYScJ38/Frame.png"  className={classes.small}/>
-        <Avatar style={{ borderColor: 'white'}}  src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/jfhLg7D/Group-215.png"  className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}}  src="https://i.ibb.co/jfhLg7D/Group-215.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/jfhLg7D/Group-215.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/jfhLg7D/Group-215.png" className={classes.small}/>
       </AvatarGroup>
       </Grid>
         <CardActions disableSpacing>
