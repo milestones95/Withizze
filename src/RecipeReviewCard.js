@@ -136,10 +136,10 @@ export default function RecipeReviewCard() {
       </Grid>
       <Grid item xs>
       <AvatarGroup max={4}>
-        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/jfhLg7D/Group-215.png"  className={classes.small}/>
-        <Avatar style={{ borderColor: 'white'}}  src="https://i.ibb.co/jfhLg7D/Group-215.png" className={classes.small}/>
-        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/jfhLg7D/Group-215.png" className={classes.small}/>
-        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/jfhLg7D/Group-215.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/ZN1S7hP/Group-215-6.png"  className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}}  src="https://i.ibb.co/Y8JGfrp/Group-215-5.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/4MNjhM4/Group-215-1.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/bz4t0sb/Group-215-2.png" className={classes.small}/>
       </AvatarGroup>
       </Grid>
         <CardActions disableSpacing>
@@ -167,15 +167,15 @@ export default function RecipeReviewCard() {
               <Typography style={{ "fontWeight": fontWeight}} align='center'>Stretchy</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" />
-              <Typography style={{ "fontWeight": fontWeight}} align='center'>True To Size</Typography>
+              <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/4MNjhM4/Group-215-1.png" />
+              <Typography style={{ "fontWeight": fontWeight}} align='center'>Runs Small</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-              <Typography style={{ "fontWeight": fontWeight}} align='center'>Popular</Typography>
+              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/MNzHnyq/Group-215-4.png"/>
+              <Typography style={{ "fontWeight": fontWeight}} align='center'>Stiff</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
+              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/bz4t0sb/Group-215-2.png"/>
               <Typography style={{ "fontWeight": fontWeight}} align='center'>Soft</Typography>
             </Grid>
           </Grid>
