@@ -134,10 +134,10 @@ export default function RecipeReviewCard() {
       </Grid>
       <Grid item xs>
       <AvatarGroup max={4}>
-        <Avatar alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"  className={classes.small}/>
-        <Avatar alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-        <Avatar alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
-        <Avatar alt="Agnes Walker" src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/tYScJ38/Frame.png"  className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}}  src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
+        <Avatar style={{ borderColor: 'white'}} src="https://i.ibb.co/tYScJ38/Frame.png" className={classes.small}/>
       </AvatarGroup>
       </Grid>
         <CardActions disableSpacing>
