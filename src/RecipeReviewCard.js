@@ -124,7 +124,7 @@ export default function RecipeReviewCard() {
         <Divider className={classes.icon}/>
       </Grid>
       <Grid item xs>
-        <StarIcon style={{ color: "gold"}} />
+        <StarIcon style={{ color: "#FFA336"}} />
       </Grid>
       <Grid item xs>
         <Typography style={{ "fontWeight": 650}} >4.9</Typography>
