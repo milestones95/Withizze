@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     background: 'rgba(255, 255, 255, 0.75)',
     maxWidth: 400,
-    borderRadius: '12px',
+    borderRadius: '0px 0px 12px 0px',
     position: 'absolute',
     width: '210px',
     left: '0px',
@@ -94,7 +94,7 @@ const insideBox = makeStyles((theme) => ({
 
 const theme = createMuiTheme({
   typography: {
-    fontSize: 6,
+    fontSize: 7.5,
     fontFamily: 'Inter',
   }
 });
@@ -102,10 +102,12 @@ export default function RecipeReviewCard() {
   const classes = useStyles();
   const insideBoxClass = insideBox();
   const [expanded, setExpanded] = React.useState(false);
-
+  const fontWeight = 600
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+
 
   return (
     <Card className={classes.root}>
@@ -115,7 +117,7 @@ export default function RecipeReviewCard() {
         <div className={classes.column} />
       </Grid>
       <Grid item xs>
-      <Typography style={{ "fontWeight": 650}}>Withizze</Typography>
+      <Typography style={{ "fontWeight": fontWeight}}>Withizze</Typography>
       </Grid>
       <Grid item xs>
         <div className={classes.column} />
@@ -127,7 +129,7 @@ export default function RecipeReviewCard() {
         <StarIcon style={{ color: "#FFA336"}} />
       </Grid>
       <Grid item xs>
-        <Typography style={{ "fontWeight": 650}} >4.9</Typography>
+        <Typography style={{ "fontWeight": fontWeight}} >4.9</Typography>
       </Grid>
       <Grid item xs>
         <div className={classes.column} />
@@ -162,19 +164,19 @@ export default function RecipeReviewCard() {
           <Grid container spacing={2} align="center">
             <Grid item xs={6} align='center'>
               <Avatar align='center' alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-              <Typography align='center'>Stretchy</Typography>
+              <Typography style={{ "fontWeight": fontWeight}} align='center'>Stretchy</Typography>
             </Grid>
             <Grid item xs={6}>
               <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" />
-              <Typography align='center'>True To Size</Typography>
+              <Typography style={{ "fontWeight": fontWeight}} align='center'>True To Size</Typography>
             </Grid>
             <Grid item xs={6}>
               <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-              <Typography align='center'>People Similar To You Bought These Jeans</Typography>
+              <Typography style={{ "fontWeight": fontWeight}} align='center'>Popular</Typography>
             </Grid>
             <Grid item xs={6}>
               <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-              <Typography align='center'>Soft</Typography>
+              <Typography style={{ "fontWeight": fontWeight}} align='center'>Soft</Typography>
             </Grid>
           </Grid>
           </CardContent>
