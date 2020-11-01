@@ -22,6 +22,7 @@ import { green } from '@material-ui/core/colors';
 import Icon from '@material-ui/core/Icon';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Randomness from './Randomizer';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import StarIcon from '@material-ui/icons/Star';
 import Divider from '@material-ui/core/Divider'; 
@@ -91,36 +92,28 @@ const theme = createMuiTheme({
  function CreateDescriptors() {
  const classes = useStyles();
 
- const phrases = ["Stretchy","True To Size","People Similar To You Bought These Jeans","Soft"]
- const min = 0
- const max = 3
- const rand = Math.round(min + Math.random() * (max - min))
- console.log("rand: " + rand)
- const descriptor = phrases[rand]
- const j = "juicy"
-
-
  return(
    <Grid container spacing={2} align='center'>
      <Grid item xs={6} align='center'>
        <Avatar align='center' alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-       <Typography align='center'>{descriptor}</Typography>
+       <Randomness></Randomness>
      </Grid>
      <Grid item xs={6}>
        <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/tYScJ38/Frame.png" />
-       <Typography align='center'>True to Size</Typography>
+       <Randomness></Randomness>
      </Grid>
      <Grid item xs={6}>
        <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-       <Typography align='center'>People Similar To You Bought These Jeans</Typography>
+       <Randomness></Randomness>
      </Grid>
      <Grid item xs={6}>
        <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-       <Typography align='center'>Soft</Typography>
+       <Randomness></Randomness>
      </Grid>
    </Grid>
  )
 }
+
 export default function RecipeReviewCard() {
   const classes = useStyles();
   const insideBoxClass = insideBox();
