@@ -22,6 +22,7 @@ import { green } from '@material-ui/core/colors';
 import Icon from '@material-ui/core/Icon';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Randomness from './Randomizer';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import StarIcon from '@material-ui/icons/Star';
 import Divider from '@material-ui/core/Divider'; 
@@ -81,7 +82,9 @@ const useStyles = makeStyles((theme) => ({
   column: {
    flexBasis: '33%',
   },
+
   }));
+
 
 const insideBox = makeStyles((theme) => ({
   root: {
@@ -98,6 +101,15 @@ const theme = createMuiTheme({
     fontFamily: 'Inter',
   }
 });
+
+ function CreateDescriptors() {
+ const classes = useStyles();
+
+ return(
+   <Randomness></Randomness>
+ )
+}
+
 export default function RecipeReviewCard() {
   const classes = useStyles();
   const insideBoxClass = insideBox();
@@ -161,24 +173,7 @@ export default function RecipeReviewCard() {
         </Grid>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-          <Grid container spacing={2} align="center">
-            <Grid item xs={6} align='center'>
-              <Avatar align='center' alt="Remy Sharp" src="https://i.ibb.co/tYScJ38/Frame.png"/>
-              <Typography style={{ "fontWeight": fontWeight}} align='center'>Stretchy</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Avatar align='center' alt="Travis Howard" src="https://i.ibb.co/4MNjhM4/Group-215-1.png" />
-              <Typography style={{ "fontWeight": fontWeight}} align='center'>Runs Small</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/MNzHnyq/Group-215-4.png"/>
-              <Typography style={{ "fontWeight": fontWeight}} align='center'>Stiff</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Avatar align='center' alt="Cindy Baker" src="https://i.ibb.co/bz4t0sb/Group-215-2.png"/>
-              <Typography style={{ "fontWeight": fontWeight}} align='center'>Soft</Typography>
-            </Grid>
-          </Grid>
+            <CreateDescriptors></CreateDescriptors>
           </CardContent>
         </Collapse>
       </ThemeProvider>
